@@ -135,7 +135,7 @@ A better method of drawing lines and curves is to use the [SVG Path Drawing](#pa
 # text drawing  / image
 
 convert -size 100x60 xc:skyblue -fill white -stroke black \
-        -font Candice -pointsize 40 -gravity center \
+        -font Lobster -pointsize 40 -gravity center \
         -draw "text 0,0 'Hello'"   draw_text.gif
 
 convert -size 100x60 xc:skyblue -gravity center \
@@ -548,7 +548,7 @@ The "`-stroke`" and "`-strokewidth`" options are used when drawing an outline ar
 These options commonly used with "`-fill`" to make text more interesting, for very little effort.
 
 ~~~
-convert -size 380x70 xc:lightblue -pointsize 50 -font Chisel \
+convert -size 380x70 xc:lightblue -pointsize 50 -font WorkSans \
         -fill green  -stroke black  -draw 'text 10,55 "Black Border"' \
         stroke_font.jpg
 ~~~
@@ -565,7 +565,7 @@ Otherwise the width has not visible effect until you make the stroke visible.
 To see how the "`-strokewidth`" actually effects the look of a font (when made visible) here I have drawn some text with various widths from 'turned off' and getting larger.
 
 ~~~
-convert -size 320x420 xc:lightblue -pointsize 70 -font Vademecum \
+convert -size 320x420 xc:lightblue -pointsize 70 -font DenkOne \
   -fill red -stroke none                 -draw 'text 30,80  "Stroke -"' \
   -fill red -stroke black -strokewidth 0 -draw 'text 30,160 "Stroke 0"' \
   -fill red -stroke black -strokewidth 1 -draw 'text 30,240 "Stroke 1"' \
@@ -592,7 +592,7 @@ However usually this is only important when you are attempting to draw [Drawing 
  Here is an example of using an extremely large stroke width.
 
 ~~~
-convert -size 320x100 xc:lightblue -font Candice -pointsize 72 -fill white \
+convert -size 320x100 xc:lightblue -font Lobster -pointsize 72 -fill white \
         -stroke black -strokewidth 15 -draw "text 25,65 'Anthony'" \
         stroke_thick.jpg
 ~~~
@@ -603,7 +603,7 @@ Note that "`-strokewidth`" expands both lines inward and outward.
 Here is the same example but with the font re-drawn, without the stroke outline, to remove the inside part of the very thick stroke.
 
 ~~~
-convert -size 320x100 xc:lightblue -font Candice -pointsize 72 -fill white \
+convert -size 320x100 xc:lightblue -font Lobster -pointsize 72 -fill white \
         -stroke black -strokewidth 15 -draw "text 25,65 'Anthony'" \
         -stroke none                  -draw "text 25,65 'Anthony'" \
         stroke_outline.jpg
@@ -2607,7 +2607,7 @@ Of course you will still need to backslash whatever quote character you are usin
 However this is lot simpler than trying to dealing with a shell own quoting and escaping system at the same time as IM's.
 
 ~~~
-convert -size 500x50 xc:lightblue  -font Candice -pointsize 36 \
+convert -size 500x50 xc:lightblue  -font Lobster -pointsize 36 \
         -gravity center     -draw @text_quotes.mvg      text_quotes.gif
 ~~~
 
@@ -2817,7 +2817,7 @@ The conversion is not always successful, but larger and/or simpler images (like 
 For example, here I convert a horrible bitmap shape into a SVG image, then convert it back again, so as to smooth the bitmap into a proper anti-aliased shape.
 
 ~~~
-convert -pointsize 72 -font Candice label:A -threshold 50% \
+convert -pointsize 72 -font Lobster label:A -threshold 50% \
         -trim +repage -bordercolor white -border 5x5 A.gif
 convert A.gif  A.svg
 convert A.svg  A.png
